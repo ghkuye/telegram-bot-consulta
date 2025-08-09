@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: telegram-bot-consulta
+    env: python
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: python telegram_bot_render.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: RENDER
+        value: "true"
